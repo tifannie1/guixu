@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f9fc"><meta name="description" content="把文件、灵感和每日计划归在一处。">
+<title>归序 · 个人资料中心</title>
+<link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <button class="brand" data-view="home"><span class="brand-logo"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>归序<span class="brand-dot">.</span></b><small>个人资料中心</small></span></button>
+    <div class="nav-group"><p class="nav-label">工作空间</p><nav id="main-nav" aria-label="工作空间"></nav></div>
+    <div class="nav-group categories"><p class="nav-label">资料分类</p><nav id="category-nav" aria-label="资料分类"></nav></div>
+    <div class="sidebar-bottom"><div class="storage"><div class="storage-label"><span data-icon="drive"></span><b>资料库</b><span id="storage-count">—</span></div><div class="storage-caption" id="storage-info">正在加载资料…</div></div><div class="profile"><span class="avatar" data-icon="user"></span><span><b>我的空间</b><small>私人工作区</small></span><span class="profile-lock" data-icon="lock"></span></div></div>
+  </aside>
+  <div class="shade" id="shade" hidden></div>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="crumb"><button class="icon-button mobile-menu" id="mobile-menu" aria-label="打开导航" aria-controls="sidebar" aria-expanded="false" data-icon="menu"></button><span class="crumb-root">工作空间</span><span class="crumb-divider" data-icon="chevRight"></span><strong id="crumb">概览</strong></div>
+      <div class="top-actions"><label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="搜索文件名、标签或内容…" aria-label="搜索资料" autocomplete="off"><kbd id="shortcut">Ctrl K</kbd></label><button class="primary top-upload" data-upload><span data-icon="upload"></span><span>上传文件</span></button></div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero" id="hero">
+        <div class="hero-copy"><div class="hero-kicker"><span></span> 你的数字工作台</div><h1>把散落的资料，<em>收在一处。</em></h1><p>文件、灵感和今日计划，都有自己的位置。</p><button class="hero-link" data-view="library">浏览我的资料 <span data-icon="arrow"></span></button></div>
+        <svg class="hero-art" viewBox="0 0 470 260" fill="none" aria-hidden="true">
+          <defs><pattern id="grid" width="23" height="23" patternUnits="userSpaceOnUse"><path d="M 23 0 L 0 0 0 23" fill="none" stroke="#a695df" stroke-opacity=".22" stroke-width="1"/></pattern><linearGradient id="folder" x1="160" y1="114" x2="368" y2="222" gradientUnits="userSpaceOnUse"><stop stop-color="#c5adfa"/><stop offset="1" stop-color="#8d70e3"/></linearGradient><linearGradient id="paper" x1="231" y1="48" x2="287" y2="183" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#ece3ff"/></linearGradient><radialGradient id="fade"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient><mask id="fadeMask"><ellipse cx="281" cy="129" rx="225" ry="135" fill="url(#fade)"/></mask><filter id="folderShadow" x="100" y="21" width="319" height="255" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="13" stdDeviation="15" flood-color="#6746b7" flood-opacity=".22"/></filter></defs>
+          <path d="M0 0h470v260H0z" fill="url(#grid)" mask="url(#fadeMask)"/><ellipse cx="273" cy="136" rx="154" ry="105" stroke="#ab96e3" stroke-opacity=".44" stroke-dasharray="4 7" transform="rotate(-10 273 136)"/><ellipse cx="278" cy="142" rx="182" ry="81" stroke="#ac98e5" stroke-opacity=".33" transform="rotate(12 278 142)"/>
+          <g filter="url(#folderShadow)"><path d="M163 102c0-9 7-16 16-16h44c6 0 10 2 14 7l9 10h101c9 0 16 7 16 16v77c0 9-7 16-16 16H179c-9 0-16-7-16-16V102Z" fill="#9274db" stroke="#a081ec" stroke-width="2" transform="rotate(-6 263 149)"/>
+          <rect x="258" y="55" width="71" height="122" rx="11" fill="#d7c5fa" stroke="#f4eeff" transform="rotate(17 293 116)"/>
+          <g transform="rotate(-12 247 111)"><rect x="208" y="44" width="79" height="135" rx="11" fill="url(#paper)" stroke="#fff"/><path d="M224 68h20M224 85h46m-46 11h40m-40 11h28" stroke="#c8b5ed" stroke-width="4" stroke-linecap="round"/><circle cx="229" cy="130" r="6" fill="#ab8fe9"/></g>
+          <path d="M165 133c1-7 8-12 15-12h176c10 0 16 8 14 17l-12 61c-2 8-8 14-17 14H175c-9 0-15-7-14-16l4-64Z" fill="url(#folder)" stroke="#d1bef9" stroke-width="1.8" transform="rotate(-6 265 167)"/><path d="m246 165 18-10 18 10-18 10-18-10Zm0 8 18 10 18-10" stroke="#fff" stroke-opacity=".9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" transform="rotate(-6 264 169)"/></g>
+          <g transform="rotate(-12 121 149)"><rect x="99" y="127" width="44" height="44" rx="12" fill="#f9f5ff" stroke="#e1d5fc"/><path d="M112 140h18v16h-18zm0 12 6-5 4 3 4-4 4 4" stroke="#9f84df" stroke-width="1.6" stroke-linejoin="round"/><circle cx="118" cy="144" r="1.3" fill="#9f84df"/></g>
+          <g transform="rotate(13 402 95)"><rect x="381" y="74" width="42" height="42" rx="12" fill="#f9f5ff" stroke="#e1d5fc"/><path d="M394 87h16v17h-16zm0 5h16m-12-7v4m8-4v4" stroke="#a186df" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <path d="M350 44v14m-7-7h14M415 169v12m-6-6h12M132 71v10m-5-5h10" stroke="#a387e4" stroke-width="1.6" stroke-linecap="round"/><circle cx="171" cy="49" r="3" fill="#bca7f0"/><circle cx="382" cy="203" r="3" fill="#bca7f0"/>
+        </svg>
+      </section>
+      <section class="quick" id="quick"><div class="section-heading"><h2>快速分类</h2><button class="subtle" data-view="library">查看全部 <span data-icon="chevRight"></span></button></div><div class="quick-grid" id="quick-grid"></div></section>
+      <div class="dashboard" id="dashboard">
+        <div class="files-column">
+          <button class="dropzone" id="dropzone" data-upload><span class="drop-icon" data-icon="cloud"></span><span><b>拖放文件到这里</b><small>或点击选择文件，导入后会自动归类</small></span><span class="drop-spark" data-icon="spark"></span></button>
+          <section class="panel files-panel" id="files-panel" aria-labelledby="files-title"><div class="panel-head"><div><h2 id="files-title">最近文件</h2><p id="files-desc">最近添加到资料库的文件</p></div><button class="subtle" id="file-more" data-view="library">查看全部 <span data-icon="chevRight"></span></button><label class="sr-only" for="sort">排序</label><select id="sort" hidden><option value="new">最新添加</option><option value="old">最早添加</option><option value="name">文件名称</option></select></div><div class="file-list" id="file-list" aria-live="polite"></div></section>
+        </div>
+        <section class="panel plan-panel" id="plan-panel" aria-labelledby="plan-title"></section>
+      </div>
+    </main>
+  </div>
+</div>
+<input id="file-input" type="file" multiple hidden>
+<dialog id="dialog"></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+<script type="module" src="/app.mjs"></script>
+</body>
+</html>

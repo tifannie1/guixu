@@ -1,0 +1,14 @@
+{
+  "name": "guixu",
+  "private": true,
+  "type": "module",
+  "main": "desktop/main.mjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/local.mjs",
+    "desktop": "electron ."
+  },
+  "devDependencies": {
+    "electron": "45.3.3"
+  }
+}

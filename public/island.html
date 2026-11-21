@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>归序 · 桌面浮窗</title>
+  <link rel="stylesheet" href="/island.css">
+</head>
+<body>
+  <main id="island" class="island">
+    <header class="capsule">
+      <div class="grip" title="拖动浮窗，双击收回" aria-hidden="true"><i></i></div>
+      <div class="capsule-brand">
+        <span class="capsule-identity" title="双击收回屏幕边缘">
+          <img class="mark" src="/icon.svg" alt="">
+          <strong>归序</strong>
+        </span>
+        <span id="capsule-label">桌面资料库</span>
+      </div>
+      <div class="window-controls">
+        <button id="pin" class="icon-button" aria-label="保持置顶" title="保持置顶" aria-pressed="true" data-icon="pin"></button>
+        <button id="hide" class="icon-button" aria-label="收回屏幕边缘" title="收回屏幕边缘，也可双击标题栏" data-icon="minus"></button>
+      </div>
+    </header>
+    <div id="panel" class="panel" hidden>
+      <nav class="tabs" aria-label="归序">
+        <button class="tab active" id="files-tab" aria-controls="library" aria-pressed="true"><span data-icon="folder"></span>资料</button>
+        <button class="tab" id="plan-tab" aria-controls="planner" aria-pressed="false"><span data-icon="calendar"></span>计划</button>
+        <button class="tab" id="music-tab" aria-controls="media-card" aria-pressed="false"><span id="music-tab-icon" aria-hidden="true"></span>音乐</button>
+      </nav>
+      <section class="media-card" id="media-card" aria-label="音乐控制" hidden>
+        <div class="media-top">
+          <span id="media-icon" class="media-icon" aria-hidden="true"></span>
+          <div class="media-copy"><b id="media-title"></b><small id="media-source"></small></div>
+          <div class="media-controls">
+            <button id="media-previous" class="icon-button" type="button" aria-label="上一首" title="上一首"></button>
+            <button id="media-play" class="icon-button media-play" type="button" aria-label="播放" title="播放"></button>
+            <button id="media-next" class="icon-button" type="button" aria-label="下一首" title="下一首"></button>
+          </div>
+        </div>
+        <div class="media-timeline" id="media-timeline" hidden>
+          <span id="media-position">0:00</span>
+          <input id="media-seek" type="range" min="0" value="0" step="1" aria-label="播放进度">
+          <span id="media-duration">0:00</span>
+        </div>
+        <div class="media-volume" id="media-volume-row" hidden>
+          <button id="media-mute" class="icon-button" type="button" aria-label="系统静音" title="系统静音"></button>
+          <label for="media-volume">系统音量</label>
+          <input id="media-volume" type="range" min="0" max="100" value="0">
+          <span id="media-level"></span>
+        </div>
+        <p id="media-empty" class="media-empty" hidden>在播放器开始播放后，这里会显示曲目。已在网易云播放却没有曲目时，可检查「设置 → 系统 → 开启 SMTC」。</p>
+        <p id="media-feedback" class="media-feedback" role="status" hidden></p>
+      </section>
+      <section class="pane" id="library" aria-label="资料">
+        <label class="search"><span data-icon="search"></span><input type="search" id="query" placeholder="搜索文件、文件夹、标签或正文" aria-label="搜索资料" autocomplete="off"></label>
+        <div class="dropzone">
+          <div class="drop-copy">
+            <span class="drop-icon" data-icon="upload"></span>
+            <span><b id="drop-heading">拖入文件或文件夹</b><small>移动归档，文件夹原样保留</small></span>
+          </div>
+          <div class="drop-actions">
+            <button type="button" class="drop-button" id="pick">选文件</button>
+            <button type="button" class="drop-button" id="pick-folder">选文件夹</button>
+          </div>
+        </div>
+        <div class="filters" id="filters" aria-label="资料分类"></div>
+        <div class="folder-nav" id="folder-nav" hidden></div>
+        <div class="list-heading"><h1 id="list-title">最近资料</h1><span id="file-count"></span></div>
+        <div class="list" id="files" aria-live="polite"></div>
+      </section>
+      <section class="pane" id="planner" aria-label="每日计划" hidden>
+        <div class="plan-nav"><button id="prev" class="icon-button" aria-label="前一天" data-icon="left"></button><label class="date-label"><span id="day-display"></span><input id="day" type="date" aria-label="计划日期"></label><button id="next" class="icon-button" aria-label="后一天" data-icon="right"></button><button id="today" class="quiet">今天</button></div>
+        <div class="plan-summary"><span>完成进度</span><b id="plan-count"></b><progress id="progress" value="0" max="100" aria-label="完成进度"></progress></div>
+        <div class="list" id="tasks" aria-live="polite"></div>
+        <button id="add-task" class="primary add"><span data-icon="plus"></span>添加计划</button>
+      </section>
+      <footer><span id="status" role="status"><span class="local-dot"></span>本机资料库</span><kbd id="shortcut" hidden>Ctrl Alt G</kbd></footer>
+    </div>
+    <dialog id="detail" aria-labelledby="detail-title"></dialog>
+  </main>
+  <script type="module" src="/island.mjs"></script>
+</body>
+</html>

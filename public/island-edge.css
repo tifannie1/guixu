@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+html { background: transparent; }
+body { background: rgba(247, 250, 255, .016); }
+body[data-tab] { background: transparent; }
+button {
+  width: 100%; height: 100%; display: grid; place-items: center; padding: 0;
+  color: #fff; cursor: pointer; border: 1px solid #d5dfef9c;
+  background: linear-gradient(167deg, #474c59f5 0%, #191c23fa 45%, #080a0dfb 71%, #16191efa);
+  box-shadow: inset 0 1px 1px #ffffff75, inset 0 -1px 1px #a7b7d63d;
+}
+button:hover, button:focus-visible, body.dragging button {
+  background: linear-gradient(167deg, #626e82f8, #292f3a 48%, #10141b 79%);
+  outline: none;
+}
+button span {
+  display: block; width: 8px; height: 8px;
+  border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor;
+  transform: translateY(-1px) rotate(45deg);
+  filter: drop-shadow(0 0 2px #a8c2e379);
+}
+body[data-edge="top"] button { border-radius: 0 0 9px 9px; border-top: 0; }
+body[data-edge="bottom"] button { border-radius: 9px 9px 0 0; border-bottom: 0; }
+body[data-edge="left"] button { border-radius: 0 9px 9px 0; border-left: 0; }
+body[data-edge="right"] button { border-radius: 9px 0 0 9px; border-right: 0; }
+body[data-edge="bottom"] button span { transform: translateY(1px) rotate(225deg); }
+body[data-edge="left"] button span { transform: translateX(-1px) rotate(-45deg); }
+body[data-edge="right"] button span { transform: translateX(1px) rotate(135deg); }

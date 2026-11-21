@@ -1,0 +1,17 @@
+# Dependencies and generated files
+node_modules/
+dist/
+outputs/
+
+# Local data, hosting settings and credentials
+.sites-runtime/
+.local/
+.openai/
+.env*
+
+# Logs and editor files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
